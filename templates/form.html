@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Pizza Delivery Order Form
+{% endblock %}
+
+{% block content %}
+<form action="/results" method="GET">
+  What's your favorite pizza flavor?
+  <input type="text" name="pizza_flavor">
+  <br>
+  What's your favorite crust type?
+  <input type="text" name="crust">
+  <input type="submit" value="Submit pizza!">
+</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Pizza Delivery Results Page
+{% endblock %}
+
+{% block content %}
+  <h3>A {{crust}}-crust {{pizza_flavor}} pizza has been ordered!</h3>
+
+  <br>
+
+  {% if individual_toppings %}
+    <h4>Toppings added:</h4>
+    {% for topping in individual_toppings %}
+      <li> {{topping}} </li>
+    {% endfor %}
+  {% endif %}
+
+  <br>
+
+  {% if pizza_flavor == 'Cheese' %}
+    <h5>I love Cheese pizza!</h5>
+  {% elif pizza_flavor == 'pepperoni' %}
+    <h5>Pepperoni is cool too!</h5>
+  {% else %}
+    <h5>I haven't tried that order but maybe I should!</h5>
+  {% endif %}
+{% endblock %}
