@@ -1,5 +1,6 @@
 # Import the flask library for usage
 from flask import Flask, request, render_template
+import json
 
 # Create an instance of the flask server
 # as the root directory within 'main.py'
@@ -25,6 +26,15 @@ def simple_pizza_results():
   }
 
   return render_template('confirmation_page.html', **context)
+
+with open('example_obj.json') as example_obj_file:
+  print("raw file printed = ", example_obj_file)
+  json_data = json.load(example_obj_file)
+  print("just the JSON data printed = ", json_data)
+
+@app.route('/json-example', methods=['GET'])
+def json_route():
+  return json_data
 
 # Turn the server on for serving
 if __name__ == "__main__":
